@@ -1,12 +1,19 @@
 <template>
   <div class="container">
-    <button @click="openModal">OPEN MODAL</button>
+    <PushButton @click="toast">OPEN TOAST</PushButton>
+    <PushButton @click="openModal">OPEN MODAL</PushButton>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
+    toast() {
+      this.$toast.show({
+        type: 'info',
+        message: 'this is the message',
+      })
+    },
     openModal() {
       this.$modal.show({
         type: 'danger',
